@@ -9,15 +9,21 @@
 </head>
 <body>
     <div class="wrapper">
+        <form action="">
         <input type="text" placeholder="Enter a country">
         <button type="submit">Serch</button>
 
+        <div class="flag">
+
+        </div>
+    </form>
     </div>
+    
     <script>
        let form = document.querySelector("form")
        form.onsubmit= (e)=>{
         e.preventDefault()
-        // deleteoldflag()
+        deleteoldflag()
 
 
         let inp = document.querySelector("input").value
@@ -36,9 +42,22 @@
         let find = inpSplitted.join('')
 
         for(let on in codes){
-            if(codes[on]===f)
+            if(codes[on]===find){
+                let images = document.createElement('img')
+                images.src = 'https://flagcdn.com/256x192/'+on+'.png'
+                document.querySelector(".flag").appendChild(images)
+            }
         }
        }
+
+       function deleteoldflag(){
+        let oldflag = Array.from(document.querySelector(".flag").children)
+        if(oldflag.length>0){
+            oldflag.forEach((f1)=>{f1.remove()})
+        }
+       }
+
+
 
     </script>
 </body>
