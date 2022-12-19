@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aqua;
+    height: 100vh;
+    width: 100%;
+}
+.wrapper input{
+    font-size: 30px;
+    
+}
+.wrapper button{
+    font-size: 30px;
+    margin: 30px;    
+}

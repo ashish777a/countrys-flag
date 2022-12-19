@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fleg</title>
+    <link rel="stylesheet" href="Fleg.css">
+</head>
+<body>
+    <div class="wrapper">
+        <input type="text" placeholder="Enter a country">
+        <button type="submit">Serch</button>
+
+    </div>
+    <script>
+       let form = document.querySelector("form")
+       form.onsubmit= (e)=>{
+        e.preventDefault()
+        // deleteoldflag()
+
+
+        let inp = document.querySelector("input").value
+        fetch('https://flagcdn.com/en/codes.json')
+        .then((Response) =>{return Response.json()})
+        .then((codes) =>{console.log(codes); getFlag(codes,inp)})
+       }
+
+       function getFlag(codes,inp){
+        inp = inp.toLowerCase()
+
+        let first = inp[0].toUpperCase()
+        let inpSplitted = inp.split('')
+        inpSplitted.splice(0,1,first)
+
+        let find = inpSplitted.join('')
+
+        for(let on in codes){
+            if(codes[on]===f)
+        }
+       }
+
+    </script>
+</body>
+</html>
